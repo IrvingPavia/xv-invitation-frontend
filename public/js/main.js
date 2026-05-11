@@ -15,6 +15,7 @@ if ("scrollRestoration" in history) {
 window.scrollTo(0, 0);
 
 document.addEventListener("DOMContentLoaded", async () => {
+  document.body.style.opacity = "1";
   window.scrollTo({ top: 0, behavior: "instant" });
   await loadSection("invitation");
   await loadSection("details");
@@ -73,13 +74,13 @@ function loadIntro() {
   if (!intro) return;
 
   setTimeout(() => {
-    intro.style.transition = "opacity 1s ease";
+    intro.style.transition = "opacity 1.2s ease";
     intro.style.opacity = "0";
 
     setTimeout(() => {
       intro.remove();
-    }, 1000);
-  }, 4000);
+    }, 1200);
+  }, 3500);
 }
 
 

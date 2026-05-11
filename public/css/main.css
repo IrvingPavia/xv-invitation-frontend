@@ -84,6 +84,8 @@
   }
 
     body {
+      opacity: 0;
+      background: #1b141b;
       font-family: var(--font-body);
       overflow-x: hidden;
     }
