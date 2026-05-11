@@ -7,7 +7,7 @@ const BASE_INVITE_URL =
   window.location.hostname === "localhost" ||
   window.location.hostname === "127.0.0.1"
     ? "http://127.0.0.1:5500/public/index.html"
-    : "https://golden-profiterole-8523b0.netlify.app/public/index.html";
+    : "https://golden-profiterole-8523b0.netlify.app/";
 
 
 let adminData = [];
