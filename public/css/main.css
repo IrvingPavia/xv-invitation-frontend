@@ -44,6 +44,11 @@
     box-sizing: border-box;
   }
    
+
+  /* =========================
+    GLOBAL CONTENT WRAPPER
+  ========================= */
+  
   section {
     background: transparent;
     position: relative;
@@ -72,16 +77,21 @@
   }
   
   /* Scroll animation */
-  .fade-up {
-    opacity: 0;
-    transform: translateY(36px);
-    transition: all 1.1s ease;
-  }
+    /* estado oculto */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(60px);
+      transition:
+        opacity 1.6s ease,
+        transform 1.6s cubic-bezier(0.22, 1, 0.36, 1)
+    }
   
-  .fade-up.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    /* estado visible */
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: 0.15s
+    }
 
     body {
       opacity: 0;

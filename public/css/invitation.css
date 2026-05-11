@@ -197,27 +197,26 @@
     ========================= */
 
     .invitation-section {
-      position: relative;
       padding: 5rem 1.5rem;
       text-align: center;
-      color: var(--text-main);
     }
 
-    .invitation-personal {
-      max-width: 520px;
-      margin: 1rem auto 1rem auto;
-      padding: 2.2rem 2rem;
+    .invitation-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 2.8rem;
+      margin: 0 auto;
+      max-width: 680px;
+    }
+
+    .invitation-card {
+      padding: 2.5rem 2rem;
       text-align: center;
-    
-      background: linear-gradient(
-        rgba(36,27,36,0.75),
-        rgba(36,27,36,0.9)
-      );
-    
-      border: 1px solid rgba(212,178,109,0.35);
+      background: linear-gradient(rgba(36, 27, 36, 0.85),
+          rgba(36, 27, 36, 0.85));
+      border: 1px solid rgba(212, 178, 109, 0.5);
       border-radius: 25px;
       box-shadow: 0 26px 52px rgba(0, 0, 0, 0.45);
-      gap: 0.9rem
     }
     
     .invitation-personal__headline {
@@ -300,8 +299,7 @@
     SCROLL REVEAL
     ========================= */
     
-    /* estado oculto */
-    .fade-up {
+    /* .fade-up {
       opacity: 0;
       transform: translateY(60px);
       transition:
@@ -309,12 +307,11 @@
           transform 1.6s cubic-bezier(0.22, 1, 0.36, 1)
     }
 
-    /* estado visible */
     .fade-up.visible {
       opacity: 1;
       transform: translateY(0);
       transition-delay: 0.15s
-    }
+    }  */
 
     /* =========================
     SEQUENTIAL REVEAL
