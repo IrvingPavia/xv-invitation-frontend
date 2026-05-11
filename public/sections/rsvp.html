@@ -1,0 +1,61 @@
+
+  <section class="rsvp-section fade-up" id="rsvp">
+
+    <h2 class="section-title">Tu Invitación Real</h2>
+    <p class="section-subtitle">
+      La Reina espera tu respuesta
+    </p>
+  
+    <div class="rsvp-card">
+  
+      <!-- <div class="rsvp-icon">✉️</div> -->
+      <div class="rsvp-icon fade-up">
+        <img src="./assets/images/gato_icon_01.png" alt="rsvp-icon" class=".rsvp-icon img">
+      </div>
+  
+      <p class="rsvp-intro">
+        Con gran alegría, te invitamos a formar parte de esta noche mágica.
+      </p>
+  
+      <div class="rsvp-passes">
+        <span>Pases disponibles:</span>
+        <strong id="available-passes">—</strong>
+      </div>
+  
+      <!-- <p class="rsvp-note">
+        Este boleto es personal e intransferible.<br />
+        Válido únicamente para el invitado indicado.
+      </p> -->
+  
+      <div class="rsvp-deadline">
+        Fecha máxima para confirmar:
+        <span>15 de Mayo</span>
+      </div>
+  
+      <!-- Aquí entra tu lógica actual -->
+      <div id="rsvp-form" class="rsvp-form">
+          <p class="rsvp__title">Confirma tu asistencia</p>
+        
+          <div class="rsvp__counter">
+            <button id="minus">−</button>
+            <span id="guest-count">1</span>
+            <button id="plus">+</button>
+          </div>
+
+          <div class="rsvp__guests" id="companions-wrapper"></div>
+        
+          <p class="rsvp__note" id="rsvp-note"></p>
+        
+          
+          <button id="confirm-btn" type="button" class="rsvp__confirm">
+            Confirmar asistencia
+          </button>
+
+          <p class="rsvp__success" id="rsvp-success"></p>
+          <p class="rsvp__error-text" id="rsvp-error"></p>
+      </div>
+  
+    </div>
+  
+  </section>
+  

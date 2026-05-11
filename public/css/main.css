@@ -1,0 +1,348 @@
+/* =========================
+   GLOBALS / MAIN
+========================= */
+@import url(https://db.onlinewebfonts.com/c/6d99065646a2170375b5ecf7b25a9f29?family=AvantGardeGothicITC+W10+Medium);
+@font-face {
+  font-family: "AvantGardeCustom";
+  src: url("https://db.onlinewebfonts.com/t/6d99065646a2170375b5ecf7b25a9f29.eot");
+  src: url("https://db.onlinewebfonts.com/t/6d99065646a2170375b5ecf7b25a9f29.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/6d99065646a2170375b5ecf7b25a9f29.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/6d99065646a2170375b5ecf7b25a9f29.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/6d99065646a2170375b5ecf7b25a9f29.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/6d99065646a2170375b5ecf7b25a9f29.svg#AvantGardeGothicITC W10 Medium")format("svg");
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+  font-family: "Spumoni";
+  src: url("../assets/fonts/Spumoni/SpumoniLPStd.woff2") format("woff2"),
+    url("../assets/fonts/Spumoni/SpumoniLPStd.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+    --bg-dark: #241b24;
+    --overlay-dark: rgba(30,18,30,0.8);
+  
+    --gold: #d4b26d;
+    --gold-soft: #bfa46a;
+  
+    --lila-soft: #c6b8d6;
+    --beige: #faf7f2;
+  
+    --text-main: #f5f1eb;
+    --text-muted: #cfc6d8;
+  
+    --font-title: "Spumoni", serif;
+    --font-body: "Spumoni", serif;
+    --font-hero: "Spumoni", serif;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+   
+  section {
+    background: transparent;
+    position: relative;
+    z-index: 1;
+  }
+  
+  p,
+  span,
+  li {
+    font-family: var(--font-body);
+  }
+  /* Titles */
+  .section-title {
+    font-family: var(--font-title);
+    font-size: 3rem;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    margin-bottom: 0.6rem;
+  }
+  
+  .section-subtitle {
+    font-family: var(--body-font);
+    color: var(--text-muted);
+    max-width: 520px;
+    margin: 0 auto 3rem auto;
+  }
+  
+  /* Scroll animation */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(36px);
+    transition: all 1.1s ease;
+  }
+  
+  .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+    body {
+      font-family: var(--font-body);
+      overflow-x: hidden;
+    }
+
+/* =========================
+   BACKGROUND GLOBAL (FIXED)
+========================= */
+
+.global-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -10;
+  overflow: hidden; /* 🔥 evita que se salga */
+}
+.global-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(rgba(36, 27, 36, 0.55),
+      rgba(36, 27, 36, 0.85));
+}
+.global-bg img {
+  width: 100vw;   /* 🔥 clave */
+  height: 100vh;  /* 🔥 clave */
+
+  object-fit: cover;
+  object-position: center center;
+
+  display: block;
+
+  transform: none; /* 🔥 asegura que NO haga zoom */
+}
+
+
+  /* Navbar */
+ .navbar {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+
+   padding: 1rem 1.5rem;
+
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+
+   z-index: 1000;
+   color: var(--beige);
+
+   transition: all 0.4s ease;
+ }
+
+ .navbar.scrolled {
+   position: fixed;
+  background: rgba(36, 27, 36, 0.6);
+    backdrop-filter: blur(6px);
+   backdrop-filter: blur(8px);
+   border-bottom: 1px solid rgba(212, 178, 109, 0.2);
+ }
+  .navbar__left {
+    font-size: 1.2rem;
+    letter-spacing: 0.25em;
+  }
+ .navbar__right {
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   gap: 10px;
+ }
+
+ .icon {
+   width: 18px;
+   height: 18px;
+   display: block;
+ }
+
+ .navbar__sound,
+ .navbar__menu {
+   font-family: var(--font-body);
+   width: 42px;
+   height: 42px;
+
+   border-radius: 999px;
+   border: 1px solid rgba(212, 178, 109, 0.45);
+
+   background: rgba(36, 27, 36, 0.45);
+   backdrop-filter: blur(6px);
+
+   color: var(--gold);
+
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+   transition: all 0.3s ease;
+ }
+ 
+.navbar__sound svg {
+  display: block;
+  width: 18px;
+  height: 18px;
+}
+.icon-sound {
+  width: 18px;
+  height: 18px;
+  display: block;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/* Estado inicial: SOLO PLAY visible */
+.icon-play {
+  opacity: 1;
+}
+
+.icon-speaker,
+.sound-wave,
+.sound-mute {
+  opacity: 0;
+}
+
+/* 🎬 Después de dar PLAY */
+.navbar__sound.is-playing .icon-play {
+  opacity: 0;
+}
+
+.navbar__sound.is-playing .icon-speaker {
+  opacity: 1;
+}
+
+.navbar__sound.is-playing .sound-wave {
+  opacity: 1;
+}
+
+/* 🔇 Cuando está muteado */
+.navbar__sound.is-muted .sound-wave {
+  opacity: 0;
+}
+
+.navbar__sound.is-muted .sound-mute {
+  opacity: 1;
+}
+
+/* Animación suave */
+.icon-sound path,
+.icon-sound line {
+  transition: opacity 0.25s ease;
+}
+
+ .navbar__sound:hover,
+ .navbar__menu:hover {
+   background: var(--gold);
+   color: #241b24;
+ }
+
+ .menu-overlay {
+   position: fixed;
+   top: 0;
+   right: -100%;
+   
+    width: 300px;
+    max-width: 80%;
+
+    background: rgba(36, 27, 36, 0.6);
+    backdrop-filter: blur(6px);
+
+   z-index: 2000;
+   transition: right 0.4s ease;
+ }
+
+ .menu-overlay.active {
+   right: 0;
+ }
+
+ .menu-content {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   height: 100%;
+   gap: 2rem;
+
+   padding: 2rem;
+   text-align: center;
+ }
+
+ /* ✅ IMPORTANTE: quitar estilo azul */
+ .menu-content a {
+  text-decoration: none;
+  color: var(--beige);
+
+  font-size: 1.1rem;
+  letter-spacing: 0.25em;
+
+  transition: all 0.3s ease;
+ }
+  .menu-content a:hover {
+    color: var(--gold);
+    transform: translateY(-2px);
+  }
+    .menu-cta {
+      border: 1px solid var(--gold);
+      padding: 0.8rem 1.6rem;
+      border-radius: 999px;
+  
+      color: var(--gold);
+      font-size: 0.9rem;
+  
+      margin-top: 1.5rem;
+    }
+    .menu-music {
+      border: 1px solid rgba(212, 178, 109, 0.4);
+      background: transparent;
+  
+      color: var(--gold-soft);
+  
+      padding: 0.8rem 1.4rem;
+      border-radius: 999px;
+  
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+  
+      margin-top: 1rem;
+  
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+  
+    .menu-music:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    .menu-overlay::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+
+      background: rgba(0, 0, 0, 0.55);
+
+      opacity: 0;
+      pointer-events: none;
+
+      transition: opacity 0.3s ease;
+    }
+
+    .menu-overlay.active::before {
+      opacity: 1;
+    }
+
+        .navbar__menu.active svg line:nth-child(1) {
+          transform: rotate(45deg) translateY(6px);
+        }
+    
+        .navbar__menu.active svg line:nth-child(2) {
+          opacity: 0;
+        }
+    
+        .navbar__menu.active svg line:nth-child(3) {
+          transform: rotate(-45deg) translateY(-6px);
+        }

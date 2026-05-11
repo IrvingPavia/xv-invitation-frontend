@@ -3,91 +3,114 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mis XV Años</title>
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="./css/main.css" />
+  <link rel="stylesheet" href="./css/invitation.css" />
+  <link rel="stylesheet" href="./css/details.css" />
+  <link rel="stylesheet" href="./css/countdown.css" />
+  <link rel="stylesheet" href="./css/location.css" />
+  <link rel="stylesheet" href="./css/rsvp.css" />
+
+  <title class="">Mis XV Años</title>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Inter&display=swap" rel="stylesheet">
+  <link href="https://db.onlinewebfonts.com/c/6d99065646a2170375b5ecf7b25a9f29?family=AvantGardeGothicITC+W10+Medium" rel="stylesheet">
 
-  <link rel="stylesheet" href="./css/styles.css">
+  
+  <!-- Favicons -->
+  <link rel="icon" type="image/x-icon" href="./assets/icons/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/icons/favicon-16x16.png">
+
 </head>
-<body>
-
-  <!-- HERO -->
-  
-
-  <section class="hero hero--image">
+  <body>
     
-    <img
-        src="./assets/images/quince-hero.jpg"
-        alt=""
-        class="hero__bg"
-        aria-hidden="true"
-    >
+
+<!-- 🧠 FONDO GLOBAL -->
+  <div class="global-bg">
+    <img src="./assets/gif/animated_bg_02.gif" alt="background">
+  </div>
+
+
+<!-- NAVBAR -->
+  <header class="navbar" id="navbar">
+    <div class="navbar__left">
+      XV AÑOS Valeria
+    </div>
+
+    <div class="navbar__right">
+      <!-- <button class="navbar__sound sound-on" id="sound-btn">
+        <span class="icon-sound"></span>
+      </button>
+      <button class="navbar__menu" id="menu-btn">☰</button> -->
+      
+<button class="navbar__sound" id="sound-btn">
+  <svg viewBox="0 0 24 24" class="icon-sound">
+
     
-    <div class="hero__overlay"></div>
+    <!-- PLAY inicial -->
+    <path class="icon-play"
+      d="M8 5v14l11-7z"
+      fill="currentColor"
+    />
+
+    <!-- bocina -->
+    <path class="icon-speaker" d="M5 9v6h4l5 5V4L9 9H5z"  fill="currentColor"/>
+    <!-- ondas -->
+    <path 
+      class="sound-wave"
+      d="M15 9.5a3.5 3.5 0 0 1 0 5" 
+      stroke="currentColor"
+      stroke-width="1.5"
+      fill="none"
+    />
+    <!-- línea mute -->
+    
+    <g class="sound-mute">
+      <line x1="16" y1="8" x2="22" y2="16"
+        stroke="currentColor"
+        stroke-width="1.6"
+      />
+      <line x1="22" y1="8" x2="16" y2="16"
+        stroke="currentColor"
+        stroke-width="1.6"
+      />
+    </g>
+
+  </svg>
+</button>
+
+
+<button class="navbar__menu" id="menu-btn">
+  <svg viewBox="0 0 24 24" class="icon">
+    <line x1="6" y1="8" x2="18" y2="8" stroke="currentColor" stroke-width="1.6"/>
+    <line x1="6" y1="12" x2="18" y2="12" stroke="currentColor" stroke-width="1.6"/>
+    <line x1="6" y1="16" x2="14" y2="16" stroke="currentColor" stroke-width="1.6"/>
+  </svg>
+
+
+    </div>
+  </header>
+
+  <!-- MENU OVERLAY -->
+  <div class="menu-overlay" id="menu">
+    <div class="menu-content">
+      <a href="#hero-main">Inicio</a>
+      <a href="#details">Familia</a>
+      <a href="#location">Lugar</a>
+      <a href="#countdown">Itinerario</a>
+      <a href="#rsvp">Confirmar</a>
+
+    </div>
+  </div>
+
+
+    <main id="app"></main>
+
   
-    <div class="hero__content">
-      <h1 class="hero__title">Valeria</h1>
-      <p class="hero__subtitle">Mis XV Años</p>
-    </div>
-  </section>
-  
-  
-
-  <!-- INVITACIÓN PERSONALIZADA -->
-  <section class="invitation invitation--shade animate">
-    <p id="family-name">La familia invitada</p>
-  </section>
-
-  <!-- DETALLES -->
-  <section class="details animate">
-    <div class="detail-card">
-      <span>📅</span>
-      <p>15 de Junio 2026</p>
-    </div>
-    <div class="detail-card">
-      <span>⏰</span>
-      <p>7:00 PM</p>
-    </div>
-    <div class="detail-card">
-      <span>🏛️</span>
-      <p>Salón Jardín Real</p>
-    </div>
-  </section>
-
-  <!-- CUENTA REGRESIVA -->
-  <section class="countdown animate">
-    <p class="countdown__title">Faltan</p>
-    <div id="timer"></div>
-  </section>
-
-  <!-- UBICACIÓN -->
-  <section class="location animate">
-    <p>Salón Jardín Real, Mérida, Yucatán</p>
-    <a
-      href="https://maps.google.com"
-      target="_blank"
-      class="btn primary"
-    >
-      Ver en Google Maps
-    </a>
-  </section>
-
-  <!-- RSVP -->
-  <section class="rsvp animate">
-    <p>¿Podrán acompañarnos?</p>
-    <button class="btn primary">Confirmar asistencia</button>
-    <button class="btn secondary">No podré asistir</button>
-  </section>
-
-  <!-- CIERRE -->
-  <footer class="footer">
-    <p>Gracias por ser parte de este momento tan especial</p>
-    <span>Con cariño, Familia Pérez</span>
-  </footer>
-
-  <script src="./js/main.js"></script>
+  <script type="module" src="./js/main.js"></script>
 </body>
 </html>

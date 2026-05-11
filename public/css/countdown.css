@@ -1,0 +1,62 @@
+ /* =========================
+    COUNTDOWN
+    ========================= */
+    .countdown-section {
+        padding: 5rem 1.5rem;
+        text-align: center;
+        background: transparent;
+        color: var(--text-main);
+      }
+      
+      .countdown-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.8rem;
+        margin-top: 3rem;
+        flex-wrap: wrap;
+      }
+      
+      /* Cada bloque */
+      .countdown-box {
+        min-width: 70px;
+        padding: 1.4rem 0.8rem;
+      
+        background: linear-gradient(
+          rgba(36,27,36,0.78),
+          rgba(36,27,36,0.78)
+        );
+      
+        border: 1px solid rgba(212,178,109,0.45);
+        border-radius: 18px;
+      
+        box-shadow: 0 26px 52px rgba(0, 0, 0, 0.45);
+      }
+      
+      /* Número */
+      .countdown-number {
+        font-family: var(--title-font);
+        font-size: 2.2rem;
+        letter-spacing: 0.12em;
+        color: var(--gold);
+        display: block;
+      }
+      
+      /* Texto */
+      .countdown-label {
+        font-family: var(--body-font);
+        font-size: 0.75rem;
+        letter-spacing: 0.15em;
+        color: var(--gold-soft);
+        margin-top: 0.4rem;
+        text-transform: uppercase;
+      }
+      
+      /* Separador (punto dorado) */
+      .countdown-separator {
+        font-size: 1.8rem;
+        color: var(--gold-soft);
+        line-height: 1;
+      }
+
+      

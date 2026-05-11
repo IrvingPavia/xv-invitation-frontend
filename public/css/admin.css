@@ -1,0 +1,74 @@
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    margin: 0;
+    background: #f6f7fb;
+    color: #333;
+  }
+  
+  .admin-header {
+    background: #ffffff;
+    padding: 1.2rem 1.5rem;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .admin-header h1 {
+    margin: 0;
+    font-size: 1.3rem;
+  }
+  
+  .admin-card {
+    background: #ffffff;
+    margin: 1.5rem;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 26px 52px rgba(0, 0, 0, 0.45);
+  }
+  
+  .admin-summary {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+    gap: 1rem;
+    margin: 1.5rem;
+  }
+  
+  .admin-summary div {
+    background: #ffffff;
+    padding: 1rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 26px 52px rgba(0, 0, 0, 0.45);
+  }
+  
+  .admin-summary strong {
+    font-size: 1.6rem;
+    display: block;
+    margin-top: 0.5rem;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  thead {
+    background: #f0f1f5;
+  }
+  
+  th, td {
+    padding: 0.7rem;
+    text-align: left;
+  }
+  
+  tbody tr:nth-child(even) {
+    background: #fafafa;
+  }
+  
+  .filter-btn {
+    padding: 0.4rem 0.8rem;
+    margin-right: 0.4rem;
+  }
+  
+  .filter-btn.active {
+    background: #4caf50;
+    color: #fff;
+  }

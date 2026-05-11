@@ -1,0 +1,230 @@
+  
+/* =========================
+   RSVP — Ceremonial
+========================= */
+
+.rsvp-section {
+  padding: 6rem 1.5rem;
+  text-align: center;
+  color: var(--text-main);
+}
+
+.rsvp-card {
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 2.2rem 2rem;
+
+  background: linear-gradient(
+    rgba(36,27,36,0.88),
+    rgba(36,27,36,0.88)
+  );
+
+  border: 1px solid rgba(212,178,109,0.5);
+  border-radius: 25px;
+  box-shadow: 0 26px 52px rgba(0,0,0,0.45);
+  gap: 0.9rem;
+}
+
+.section-title {
+  font-family: var(--font-title);
+  font-size: 2.4rem;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  margin-bottom: 0.6rem;
+}
+
+.section-subtitle {
+  font-family: var(--font-title);
+  font-size: 1.3rem;
+  color: var(--text-muted);
+  max-width: 520px;
+  margin: 0 auto 1rem auto;
+}
+
+/* Icono */
+.rsvp-icon {
+  font-size: 2.2rem;
+  color: var(--gold);
+  margin-bottom: 1.6rem;
+}
+.rsvp-icon img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  margin-bottom: 0.6rem;
+}
+
+/* Intro */
+.rsvp-intro {
+  font-family: var(--body-font);
+  font-size: 1.3rem;
+  color: var(--beige);
+  margin-bottom: 2rem;
+}
+
+/* Pases */
+.rsvp-passes {
+  font-family: var(--title-font);
+  font-size: 1.4rem;
+  letter-spacing: 0.12em;
+  margin-bottom: 1.5rem;
+  color: var(--gold-soft);
+}
+
+.rsvp-passes strong {
+  display: block;
+  font-size: 2.4rem;
+  color: var(--gold);
+  margin-top: 0.3rem;
+}
+.rsvp__title {
+  font-family: var(--body-font);
+  font-size: 1.4rem;
+  color: var(--beige);
+  margin-bottom: 1rem;
+}
+
+.rsvp-note{
+  font-family: var(--body-font);
+  font-size: 1.6rem;
+  color: var(--beige);
+  margin-bottom: 1.5rem;
+}
+
+.rsvp-deadline {
+  font-family: var(--body-font);
+  font-size: 1.4rem;
+  color: var(--beige);
+  margin-bottom: 1.5rem;
+}
+
+/* Counter */
+.rsvp__counter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
+  margin: 2rem 0 1.4rem 0;
+}
+
+.rsvp__counter span {
+  font-family: var(--title-font);
+  font-size: 1.8rem;
+  color: var(--gold);
+}
+
+/* Botones +/- */
+.rsvp__counter button {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid var(--gold);
+  background: transparent;
+  color: var(--gold);
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.rsvp__counter button:hover {
+  background: var(--gold);
+  color: #241b24;
+}
+
+/* Inputs */
+.rsvp__guests input {
+  width: 100%;
+  padding: 0.7rem;
+  margin-top: 0.6rem;
+  border-radius: 10px;
+  border: 1px solid rgba(212,178,109,0.4);
+  background: rgba(255,255,255,0.95);
+  font-size: 0.9rem;
+}
+
+/* Confirm */
+.rsvp__confirm {
+  width: 100%;
+  padding: 0.9rem;
+  border-radius: 999px;
+  border: 1px solid var(--gold);
+  background: transparent;
+  color: var(--gold);
+  font-size: 1rem;
+  margin-top: 1.6rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.rsvp__confirm:hover {
+  background: var(--gold);
+  color: #241b24;
+}
+
+/* Estados */
+.rsvp__success {
+  margin-top: 1rem;
+  color: #8BC34A;
+}
+
+.rsvp__error-text {
+  font-size: 1rem;
+  color: #e57373;
+  margin-top: 0.5rem;
+}
+
+
+/* =========================
+   RSVP CONFIRMADO
+========================= */
+
+.rsvp-summary {
+  margin-top: 2.2rem;
+  padding: 2rem 1.8rem;
+
+  text-align: center;
+
+  background: linear-gradient(
+    rgba(36,27,36,0.7),
+    rgba(36,27,36,0.9)
+  );
+
+  border: 1px solid rgba(212,178,109,0.45);
+  border-radius: 22px;
+
+  box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+}
+
+.rsvp-summary__icon {
+  font-size: 2rem;
+  color: var(--gold);
+  margin-bottom: 0.8rem;
+}
+
+.rsvp-summary__title {
+  font-family: var(--font-title);
+  font-size: 1.6rem;
+  letter-spacing: 0.18em;
+  color: var(--gold);
+  margin-bottom: 1rem;
+}
+
+.rsvp-summary__principal {
+  font-family: var(--font-title);
+  font-size: 1.6rem;
+  color: var(--beige);
+  margin-bottom: 1rem;
+}
+
+/* Acompañantes */
+.rsvp-summary__companions {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.rsvp-summary__companions li {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  margin: 0.3rem 0;
+}

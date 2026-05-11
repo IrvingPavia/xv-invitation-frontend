@@ -1,0 +1,368 @@
+/* =========================
+   HERO FONT
+========================= */
+
+  /* ANIMATION INTRO */
+.hero-intro {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  overflow: hidden;
+}
+.hero-intro.fade {
+  filter: blur(6px);
+}
+.hero-intro__bg {
+  animation: zoomIntro 5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes zoomIntro {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.02);
+  }
+}
+
+/* GIF como fondo */
+.hero-intro__bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* overlay para dar estilo */
+.hero-intro__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(36, 27, 36, 0.5),
+      rgba(36, 27, 36, 0.85));
+}
+
+/* texto opcional */
+.hero-intro__content {
+  position: absolute;
+  bottom: 80px;
+  width: 100%;
+  text-align: center;
+  color: var(--gold);
+  letter-spacing: 0.2em;
+}
+
+  
+
+  /* HERÓ */
+
+    /* PARALLAX */
+    .hero-section {
+      position: relative;
+      min-height: 100vh;
+    
+    
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    
+      color: var(--beige);
+    }
+    .hero-section * {
+      font-family: var(--hero-font);
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 1.5rem;
+      max-width: 480px;
+    }
+  
+  /* =========================
+     HERO NAME IMAGE
+  ========================= */
+  
+    .hero-name {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  
+      margin: 1rem 0 1.5rem 0;
+    }
+  
+    /* imagen del nombre */
+    .hero-name img {
+      width: clamp(260px, 60vw, 650px);
+      filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.6));
+      height: auto;
+      display: block;
+      object-fit: contain;
+    }
+
+    /* =========================
+     HERO TYPOGRAPHY FINAL
+  ========================= */
+    /* PRETÍTULO */
+    .hero-pretitle {
+      font-family: var(--font-body);
+      font-size: 2rem;
+      /* antes más pequeño */
+      letter-spacing: 0.3em;
+      margin-bottom: 0.6rem;
+    }
+  
+    /* NOMBRE PRINCIPAL */
+    /* .hero-title {
+      font-size: clamp(3.8rem, 9vw, 5.5rem);
+      letter-spacing: 0.12em;
+      color: var(--gold);
+  
+      line-height: 1.1;
+      margin: 0.5rem 0;
+    } */
+  
+    /* TEXTO */
+    .hero-tagline {
+      font-family: var(--font-body);
+      font-size: 1.8rem;
+      margin: 1.2rem 0;
+      opacity: 0.9;
+    }
+  
+    /* FECHA */
+    .hero-date {
+      font-family: var(--font-body);
+      font-size: 1.8rem;
+      letter-spacing: 0.18em;
+      margin: 1.8rem 0;
+  
+      color: var(--gold);
+    }
+  
+  
+  
+  
+  
+  @media (max-width: 480px) {
+    .hero-title {
+      font-size: 3rem;
+    }
+  }
+  .hero-countdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.2rem
+  }
+  
+  .hero-countdown div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  
+    text-align: center;min-width: 80px;
+    padding: 0.9rem 1rem;
+  
+    background: rgba(36,27,36,0.75);
+    border: 1px solid rgba(212,178,109,0.4);
+    border-radius: 25px;
+  
+    box-shadow: 0 26px 52px rgba(0, 0, 0, 0.45);
+  }
+  
+    .hero-countdown span {
+      font-size: 1.8rem;
+      line-height: 1;
+    }
+  
+    .hero-countdown label {
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      margin-top: 0.4rem;
+      opacity: 0.85;
+    }
+  
+  /* =========================
+    INVITACIÓN
+    ========================= */
+
+    .invitation-section {
+      position: relative;
+      padding: 5rem 1.5rem;
+      text-align: center;
+      color: var(--text-main);
+    }
+
+    .invitation-personal {
+      max-width: 520px;
+      margin: 1rem auto 1rem auto;
+      padding: 2.2rem 2rem;
+      text-align: center;
+    
+      background: linear-gradient(
+        rgba(36,27,36,0.75),
+        rgba(36,27,36,0.9)
+      );
+    
+      border: 1px solid rgba(212,178,109,0.35);
+      border-radius: 25px;
+      box-shadow: 0 26px 52px rgba(0, 0, 0, 0.45);
+      gap: 0.9rem
+    }
+    
+    .invitation-personal__headline {
+      font-size: 1.5rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold-soft);
+      margin-top: 0rem;
+      opacity: 0.9;
+      color: rgba(212, 178, 109, 0.95);
+    }
+    
+    .invitation-personal__name {
+      font-size: clamp(2.5rem, 5.5vw, 2.5rem);
+      letter-spacing: 0.12em;
+      color: var(--gold);
+      margin-top: 0rem;
+      line-height: 1.2;
+      color: var(--gold)
+    }
+    
+    .invitation-personal__note {
+      font-size: 1.35rem;
+      opacity: 0.85;
+      margin-top: 0rem;
+      color: rgba(232, 215, 180, 0.85);
+    }
+    
+    .invitation-personal__list {
+      font-size: 1.7rem;
+      opacity: 0.85;
+      margin-top: 0rem;
+
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .invitation-personal__list li {
+      margin: 0.3rem 0;
+      color: var(--beige);
+    }
+
+    .divider-top{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  
+      margin: 1rem 0;
+      /* 🔥 más espacio */
+    }
+    .divider-bottom {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      margin: 0rem 0;
+      /* 🔥 más espacio */
+    }
+
+    .divider-top img,
+    .divider-bottom img {
+      width: clamp(260px, 55vw, 520px);
+      /* 🔥 MUCHO más grande */
+      height: auto;
+
+      opacity: 0.95;
+
+      filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.4));
+      /* 🔥 profundidad */
+
+      display: block;
+    }
+
+
+
+
+
+    /* =========================
+    SCROLL REVEAL
+    ========================= */
+    
+    /* estado oculto */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(60px);
+      transition:
+          opacity 1.6s ease,
+          transform 1.6s cubic-bezier(0.22, 1, 0.36, 1)
+    }
+
+    /* estado visible */
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: 0.15s
+    }
+
+    /* =========================
+    SEQUENTIAL REVEAL
+    ========================= */
+    
+    /* estado inicial */
+    .invitation-personal__name {
+      transform: translateY(30px) scale(0.95);
+      transition:
+        opacity 1s ease,
+        transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .fade-up.visible .invitation-personal__name {
+      transform: translateY(0) scale(1);
+    }
+    .reveal-item {
+      opacity: 0;
+      transform: translateY(20px);
+
+      transition:
+        opacity 0.8s ease,
+        transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .reveal-item .list {
+      opacity: 0;
+      transform: translateY(20px);
+
+      transition:
+        opacity 0.9s ease,
+        transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    /* cuando el padre es visible */
+    .fade-up.visible .reveal-item {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* delays progresivos */
+    .fade-up.visible .reveal-item:nth-child(1) {
+      transition-delay: 0.2s;
+    }
+    .fade-up.visible .reveal-item:nth-child(2) {
+      transition-delay: 0.5s;
+    }
+    .fade-up.visible .reveal-item:nth-child(3) {
+      transition-delay: 0.8s;
+    }
+    .fade-up.visible .reveal-item:nth-child(4) {
+      transition-delay: 0.8s;
+    }

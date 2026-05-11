@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Panel Admin RSVP</title>
+  <link rel="stylesheet" href="./css/admin.css" />
+</head>
+<body>
+
+  <header class="admin-header">
+    <h1>Panel Admin RSVP</h1>
+  </header>
+
+  <!-- Carga inicial CSV -->
+  <section id="import-section" class="admin-card">
+    <h2>Carga inicial de invitados</h2>
+
+    <p>
+      Sube el archivo CSV con la lista inicial de invitados.
+      <br />
+      <strong>Nota:</strong> Todas las filas deben incluir un ID.
+    </p>
+
+    <input type="file" id="csv-file" accept=".csv" />
+    <button id="import-btn">Importar CSV</button>
+
+    <div id="import-result"></div>
+  </section>
+
+  <!-- Resumen / KPIs -->
+  <section id="admin-summary" class="admin-summary"></section>
+
+  <!-- Filtros -->
+  <section class="admin-card">
+    <h2>Filtros</h2>
+    <button data-filter="all" class="filter-btn active">Todos</button>
+    <button data-filter="confirmed" class="filter-btn">Confirmados</button>
+    <button data-filter="pending" class="filter-btn">Pendientes</button>
+  </section>
+
+  <!-- Tabla -->
+  <section class="admin-card">
+    <table id="admin-table">
+      <thead>
+        <tr>
+          <th>Invitación</th>
+          <th>Tipo</th>
+          <th>Estado</th>
+          <th>Asistentes</th>
+          <th>Link</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+  <!-- Exportación -->
+  <section class="admin-card">
+    <h2>Exportación</h2>
+    <button id="export-btn">
+      Exportar RSVPs confirmados (Excel)
+    </button>
+    <button id="export-qrs-btn">
+        Descargar QRs (ZIP)
+    </button>
+    <button id="export-cards-btn">
+        Descargar tarjetas para imprimir (PDF)
+    </button>
+  </section>
+
+  <script src="./js/admin.js"></script>
+</body>
+</html>
