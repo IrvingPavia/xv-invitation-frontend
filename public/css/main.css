@@ -111,16 +111,18 @@
 .global-bg {
   position: fixed;
   inset: 0;
-  z-index: -10;
-  overflow: hidden; /* 🔥 evita que se salga */
+  z-index: 0;
+  overflow: hidden; /*🔥 evita que se salga */
+  pointer-events: none;
+  transform: translateZ(0);
 }
 .global-bg::after {
   content: "";
   position: absolute;
   inset: 0;
 
-  background: linear-gradient(rgba(36, 27, 36, 0.55),
-      rgba(36, 27, 36, 0.85));
+  background: linear-gradient(rgba(36, 27, 36, 0.25),
+      rgba(36, 27, 36, 0.55));
 }
 .global-bg img {
   width: 100%;   /* 🔥 clave */

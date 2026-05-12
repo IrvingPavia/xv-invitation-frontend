@@ -16,6 +16,7 @@ window.scrollTo(0, 0);
 
 document.addEventListener("DOMContentLoaded", async () => {
   document.body.style.opacity = "1";
+  document.body.style.background = "linear-gradient(rgba(36, 27, 36, 0.15))";
   window.scrollTo({ top: 0, behavior: "instant" });
   await loadSection("invitation");
   await loadSection("details");
