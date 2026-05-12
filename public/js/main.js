@@ -80,7 +80,7 @@ function loadIntro() {
     setTimeout(() => {
       intro.remove();
     }, 1200);
-  }, 3500);
+  }, 4050);
 }
 
 
@@ -189,7 +189,6 @@ function fadeOutAudio() {
   }, 100);
 }
 
-
 // 🎬 4. Control manual del botón
 soundBtn.addEventListener("click", () => {
   // 🎬 PRIMER CLICK → activar audio
@@ -213,5 +212,31 @@ soundBtn.addEventListener("click", () => {
   }
 });
 
+
+const scrollBar = document.getElementById("scrollTopBar");
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 300) {
+    scrollBar.classList.add("active");
+  } else {
+    scrollBar.classList.remove("active");
+  }
+});
+
+scrollBar.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+});
+
+
+const scrollIndicator = document.querySelector(".scroll-indicator");
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 50) {
+    scrollIndicator.style.opacity = "0";
+  } else {
+    scrollIndicator.style.opacity = "1";
+  }
+});
 
 

@@ -93,12 +93,16 @@
       transition-delay: 0.15s
     }
 
+
+    html,
     body {
-      opacity: 0;
-      background: #1b141b;
-      font-family: var(--font-body);
+      margin: 0;
+      padding: 0;
+
+      width: 100%;
       overflow-x: hidden;
     }
+
 
 /* =========================
    BACKGROUND GLOBAL (FIXED)
@@ -119,8 +123,8 @@
       rgba(36, 27, 36, 0.85));
 }
 .global-bg img {
-  width: 100vw;   /* 🔥 clave */
-  height: 100vh;  /* 🔥 clave */
+  width: 100%;   /* 🔥 clave */
+  height: 100%;  /* 🔥 clave */
 
   object-fit: cover;
   object-position: center center;
@@ -138,12 +142,11 @@
    left: 0;
    width: 100%;
 
-   padding: 1rem 1.5rem;
-
    display: flex;
    justify-content: space-between;
    align-items: center;
-
+   padding: 1rem 1.5rem;
+   box-sizing: border-box;
    z-index: 1000;
    color: var(--beige);
 
@@ -152,9 +155,8 @@
 
  .navbar.scrolled {
    position: fixed;
-  background: rgba(36, 27, 36, 0.6);
-    backdrop-filter: blur(6px);
-   backdrop-filter: blur(8px);
+   background: rgba(36, 27, 36, 0.6);
+  backdrop-filter: blur(8px);
    border-bottom: 1px solid rgba(212, 178, 109, 0.2);
  }
   .navbar__left {
@@ -207,6 +209,7 @@
   background-size: contain;
   background-repeat: no-repeat;
 }
+
 
 /* Estado inicial: SOLO PLAY visible */
 .icon-play {
@@ -358,3 +361,106 @@
         .navbar__menu.active svg line:nth-child(3) {
           transform: rotate(-45deg) translateY(-6px);
         }
+
+/* =========================
+   SCROLL TOP ARROWS
+========================= */
+
+.scroll-top-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6rem;
+
+  padding: 0.8rem 1rem;
+
+  background: rgba(36, 27, 36, 0.2);
+  backdrop-filter: blur(8px);
+
+  border-top: 1px solid rgba(212, 178, 109, 0.25);
+
+  color: var(--gold);
+  font-size: 0.95rem;
+  letter-spacing: 0.1em;
+
+  z-index: 1000;
+
+  transform: translateY(100%);
+  opacity: 0;
+
+  transition: all 0.4s ease;
+}
+
+.scroll-top-bar.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* =========================
+   ARROWS (UP)
+========================= */
+
+.arrow {
+  display: inline-block;
+
+  width: 12px;
+  height: 12px;
+
+  border-left: 2px solid var(--gold);
+  border-top: 2px solid var(--gold);
+  opacity: 0.8;
+  border-color: rgba(212, 178, 109, 0.9);
+
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.35)); 
+
+  transform: rotate(45deg);
+  margin: 0 4px;
+
+  animation: arrowUp 1.5s infinite;
+}
+
+.arrow:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.arrow:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+/* @keyframes arrowUp {
+  0% {
+      transform: rotate(45deg) translateY(10px);
+      opacity: 0;
+    }
+  
+    50% {
+      opacity: 1;
+    }
+  
+    100% {
+      transform: rotate(45deg) translateX(-10px);
+      opacity: 0;
+    }
+} */
+
+
+@keyframes arrowUp {
+  0% {
+    transform: translateY(10px) rotate(45deg);
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-10px) rotate(45deg);
+    opacity: 0;
+  }
+}
